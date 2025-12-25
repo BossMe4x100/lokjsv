@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>รักเค้ามั้ย 💖</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd1dc, #ffe4e1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
+    .box {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        width: 340px;
+    }
+    img {
+        width: 220px;
+        margin-bottom: 15px;
+    }
+    h1 {
+        color: #ff4d6d;
+    }
+    button {
+        margin: 10px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+    .love-big {
+        font-size: 22px;
+        background: #ff4d6d;
+        color: white;
+    }
+    .love-only {
+        font-size: 26px;
+        background: #ff4d6d;
+        color: white;
+        padding: 14px 40px;
+    }
+    .no-small {
+        font-size: 12px;
+        background: #ccc;
+    }
+    .next {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box" id="app"></div>
+
+<script>
+let step = 1;
+const app = document.getElementById("app");
+
+render();
+
+function render() {
+    if (step === 1) {
+        app.innerHTML = `
+            <h1>รักเค้ามั้ย 💕</h1>
+            <img src="https://media.tenor.com/IdEtn1hQEXAAAAAj/orange-cat-funny.gif">
+            <div>
+                <button class="love-big" onclick="goLove()">Love</button>
+                <button class="no-small" onclick="goNo()">No</button>
+            </div>
+        `;
+    }
+
+    if (step === 2) {
+        app.innerHTML = `
+            <img src="https://media1.tenor.com/m/cufstBCUfvgAAAAC/cat-hitting.gif">
+            <div>
+                <button class="love-big" onclick="goLove()">Love</button>
+                <button class="no-small" onclick="goNo2()">No</button>
+            </div>
+        `;
+    }
+
+    if (step === 3) {
+        app.innerHTML = `
+            <img src="https://media.tenor.com/J5AJgdd3GqAAAAAi/crying-cat-sad-kitty.gif">
+            <div>
+                <button class="love-only" onclick="goLove()">Love</button>
+            </div>
+        `;
+    }
+
+    if (step === 4) {
+        app.innerHTML = `
+            <img src="https://media1.tenor.com/m/bzLYkkrcr1QAAAAC/kitten-love-love-you-kitten.gif">
+            <h1>รักเหมือนกันนะค้าบ 💖</h1>
+            <p>จุ้บๆๆๆๆๆๆ</p>
+            <div class="next" onclick="goNext()">👉 กดต่อไป</div>
+        `;
+    }
+
+    if (step === 5) {
+        app.innerHTML = `
+            <img src="https://media.tenor.com/mSWig3MVpg8AAAAj/b%C3%B4ng-hoa-c%E1%BB%A7a-em.gif">
+            <h1>🎀MerryChristmas🎀</h1>
+            <p>
+                ขอบคุณนะที่คอยอยู่ข้างๆ เค้าเสมอ รักเธอที่สุดเลย เมอร์รี่คริสต์มาสนะค้าบ  🎄✨"
+            </p>
+        `;
+    }
+}
+
+function goNo() {
+    step = 2;
+    render();
+}
+
+function goNo2() {
+    step = 3;
+    render();
+}
+
+function goLove() {
+    step = 4;
+    render();
+}
+
+function goNext() {
+    step = 5;
+    render();
+}
+</script>
+
+</body>
+</html>
